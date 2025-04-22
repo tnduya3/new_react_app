@@ -1,0 +1,69 @@
+/* Indigo Music Player Styles */
+@import "tailwindcss";
+
+/* Custom styles for range slider (progress bar) */
+input[type="range"] {
+  height: 8px;
+  border-radius: 5px;
+  background: #4f46e5; /* indigo-600 */
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #6366f1; /* indigo-500 */
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #6366f1; /* indigo-500 */
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom track list scrollbar */
+.max-h-96::-webkit-scrollbar {
+  width: 8px;
+}
+
+.max-h-96::-webkit-scrollbar-track {
+  background: #4338ca; /* indigo-700 */
+  border-radius: 5px;
+}
+
+.max-h-96::-webkit-scrollbar-thumb {
+  background: #6366f1; /* indigo-500 */
+  border-radius: 5px;
+}
+
+.max-h-96::-webkit-scrollbar-thumb:hover {
+  background: #818cf8; /* indigo-400 */
+}
+
+/* Animations */
+@keyframes pulse-indigo {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-indigo {
+  animation: pulse-indigo 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+#app {
+    background-image: url('/src/assets/bg.png') ;
+}
