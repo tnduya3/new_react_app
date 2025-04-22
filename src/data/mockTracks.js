@@ -1,10 +1,12 @@
+import mckSong from '../assets/SpotiDownloader.com - Chỉ Một Đêm Nữa Thôi - RPT MCK.mp3';
+
 export const mockTracks = [
   {
     id: 1,
     title: "Chỉ một đêm nữa thôi",
     artist: "RPT MCK",
     coverArt: "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=600&auto=format&fit=crop",
-    audioUrl: "/src/assets/SpotiDownloader.com - Chỉ Một Đêm Nữa Thôi - RPT MCK.mp3",
+    audioUrl: mckSong,
     duration: "2:21"
   },
   {
