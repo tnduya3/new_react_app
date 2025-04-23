@@ -4,69 +4,60 @@ import MusicPlayer from './components/MusicPlayer';
 import TrackList from './components/TrackList';
 import SearchBar from './components/SearchBar';
 import { mockTracks } from './data/mockTracks';
+import HeaderMain from './components/Header';
 
 const App = () => {
   const [tracks, setTracks] = useState(mockTracks);
   const [currentTrack, setCurrentTrack] = useState(null);
   const [filteredTracks, setFilteredTracks] = useState(mockTracks);
   const [showTracklist, setShowTracklist] = useState(true);
-  
+
   // Select first track by default when app loads
   useEffect(() => {
     if (mockTracks.length > 0 && !currentTrack) {
       setCurrentTrack(mockTracks[0]);
     }
   }, []);
-  
+
   const handleSelectTrack = (track) => {
     setCurrentTrack(track);
   };
-  
-  const handleSearch = (query) => {
-    const filtered = mockTracks.filter(track => 
-      track.title.toLowerCase().includes(query.toLowerCase()) || 
-      track.artist.toLowerCase().includes(query.toLowerCase())
-    );
-    setFilteredTracks(filtered);
-  };
+
 
   const toggleTracklist = () => {
     setShowTracklist(!showTracklist);
   };
-  
+
   return (
-    <div className="min-h-screen py-12 px-4" id='app'>
-      <div className="max-w-5xl mx-auto">
-        <header className="text-center mb-10">
-          <h1 className="text-4xl font-bold text-white mb-2">Indigo Music</h1>
-          <p className="text-indigo-300">Your favorite tunes, anytime, anywhere.</p>
-        </header>
-        
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex-1">
-            <SearchBar onSearch={handleSearch} />
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          {showTracklist && (
-            <div className="order-2 md:order-1">
-              <TrackList 
-                tracks={filteredTracks} 
-                onSelectTrack={handleSelectTrack} 
-                currentTrackId={currentTrack?.id}
-              />
+    <div className="">
+      <HeaderMain />
+      <div className="min-h-screen py-12 px-4" id='app'>
+        <div className="max-w-5xl mx-auto mt-12">
+          <header className="text-center mb-10">
+            <h1 className="text-4xl font-bold text-white mb-2">Indigo Music</h1>
+            <p className="text-indigo-300">Your favorite tunes, anytime, anywhere.</p>
+          </header>
+
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8" id='main'>
+
+            {showTracklist && (
+              <div className="order-2 md:order-1">
+                <TrackList
+                  tracks={filteredTracks}
+                  onSelectTrack={handleSelectTrack}
+                  currentTrackId={currentTrack?.id}
+                />
+              </div>
+            )}
+
+            <div className={`order-1 md:order-2 ${!showTracklist ? 'md:col-span-2 mx-auto' : ''}`}>
+              <MusicPlayer currentTrack={currentTrack} />
             </div>
-          )}
-          
-          <div className={`order-1 md:order-2 ${!showTracklist ? 'md:col-span-2 mx-auto' : ''}`}>
-            <MusicPlayer currentTrack={currentTrack} />
           </div>
-        </div>
 
 
-        <button 
+          <button
             onClick={toggleTracklist}
             className="ml-4 bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition-colors flex items-center"
           >
@@ -86,10 +77,11 @@ const App = () => {
               </>
             )}
           </button>
-        
-        <footer className="mt-16 text-center text-indigo-400 text-sm">
-          <p>© {new Date().getFullYear()} Indigo Music. All rights reserved.</p>
-        </footer>
+
+          <footer className="mt-16 text-center text-indigo-400 text-sm">
+            <p>© {new Date().getFullYear()} Indigo Music. All rights reserved.</p>
+          </footer>
+        </div>
       </div>
     </div>
   );

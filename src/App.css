@@ -67,3 +67,10 @@ input[type="range"]::-moz-range-thumb {
 #app {
     background-image: url('/src/assets/bg.png') ;
 }
+
+#main {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgb(0, 0, 0);
+}
