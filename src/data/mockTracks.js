@@ -1,4 +1,6 @@
 import mckSong from '../assets/SpotiDownloader.com - Chỉ Một Đêm Nữa Thôi - RPT MCK.mp3';
+import charlieSong from '../assets/WeDontTalkAnyMore.mp3';
+import bieberSong from '../assets/LoveYourself.mp3';
 
 export const mockTracks = [
   {
@@ -11,19 +13,19 @@ export const mockTracks = [
   },
   {
     id: 2,
-    title: "Summer Breeze",
-    artist: "Ocean Waves",
+    title: "We Don't Talk Anymore",
+    artist: "Charlie Puth",
     coverArt: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=600&auto=format&fit=crop",
-    audioUrl: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=inspiring-acoustic-12326.mp3",
-    duration: "3:45"
+    audioUrl: charlieSong,
+    duration: "3:37"
   },
   {
     id: 3,
-    title: "Urban Rhythm",
-    artist: "City Beats",
+    title: "Love Yourself",
+    artist: "Justin Bieber",
     coverArt: "https://images.unsplash.com/photo-1513279922550-250c2129b13a?w=600&auto=format&fit=crop",
-    audioUrl: "https://cdn.pixabay.com/download/audio/2023/03/19/audio_e2a650c8a5.mp3?filename=electronic-future-beats-117997.mp3",
-    duration: "3:12"
+    audioUrl: bieberSong,
+    duration: "3:52"
   },
   {
     id: 4,

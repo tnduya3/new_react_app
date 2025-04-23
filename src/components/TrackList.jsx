@@ -14,7 +14,7 @@ const TrackList = ({ tracks, onSelectTrack, currentTrackId }) => {
               onClick={() => onSelectTrack(track)}
               className={`p-3 rounded-md cursor-pointer transition-all ${
                 currentTrackId === track.id 
-                  ? 'filter-blur-20 text-white' 
+                  ? 'bg-indigo-700 filter-blur-50 text-white hover:bg-indigo-600 text-indigo-100' 
                   : 'filter-blur-30 hover:bg-indigo-600 text-indigo-100'
               }`}
               id='track-item'
