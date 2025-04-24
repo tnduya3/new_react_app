@@ -18,7 +18,7 @@ const SearchBar = ({ onSearch }) => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search for songs, artists..."
-          className="flex-1 text-white p-3 rounded-l-lg border-2 border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          className="flex-1 text-white p-3 rounded-l-lg focus:outline-none"
         />
         <button 
           type="submit" 
